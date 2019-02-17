@@ -51,7 +51,7 @@
             // 
             // bt1
             // 
-            this.bt1.Location = new System.Drawing.Point(418, 100);
+            this.bt1.Location = new System.Drawing.Point(434, 100);
             this.bt1.Name = "bt1";
             this.bt1.Size = new System.Drawing.Size(200, 50);
             this.bt1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // bt2
             // 
-            this.bt2.Location = new System.Drawing.Point(418, 184);
+            this.bt2.Location = new System.Drawing.Point(434, 183);
             this.bt2.Name = "bt2";
             this.bt2.Size = new System.Drawing.Size(200, 50);
             this.bt2.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // bt3
             // 
-            this.bt3.Location = new System.Drawing.Point(418, 273);
+            this.bt3.Location = new System.Drawing.Point(434, 273);
             this.bt3.Name = "bt3";
             this.bt3.Size = new System.Drawing.Size(200, 50);
             this.bt3.TabIndex = 3;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.bt1);
             this.Controls.Add(this.lbl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(7680, 4800);
+            this.MaximumSize = new System.Drawing.Size(1100, 650);
             this.MinimumSize = new System.Drawing.Size(1100, 650);
             this.Name = "Form_Battleship";
             this.Text = "Form_Battleship";
