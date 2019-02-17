@@ -1,0 +1,137 @@
+@startuml
+
+title Battleship Game - Class Diagram
+
+package "IGame.cs"
+{
+
+    interface IGame
+    {
+        + Settings() : void;
+    }
+}
+
+package "BattleShip"
+{
+    
+    package "BattleShipGame.cs"
+    {
+
+        class BattleShipGame
+        {
+    
+            - {Abstract} BattleShipPlayer *first;
+            - {Abstract} BattleShipPlayer *second;
+            - int level;
+            - Map map1;
+            - Map map2;
+        }
+    
+    }
+
+    package "BattleShipPlayer.cs" #CCCCED
+    {
+
+        abstract BattleShipPlayer
+        {
+            + GenerateMap(MapGenerator* generator) : Map;
+            + DoMove(Strategy* strategy) : void;
+        }
+        
+    }
+    
+
+    package "MapGenerator.cs" #DDDDDD
+    {
+
+        abstract MapGenerator
+    
+        interface IMapGenerator
+        {
+            + GenerateMap() : Map;
+        }
+    
+        class RandomMapGenerator
+        {
+            + GenerateMap() : Map;
+        }
+
+        class AdvancedMapGenerator
+        {
+            + GenerateMap() : Map;
+        }
+    
+        IMapGenerator <|-- RandomMapGenerator
+        MapGenerator <|-- RandomMapGenerator 
+
+        IMapGenerator <|-- AdvancedMapGenerator
+        MapGenerator <|-- AdvancedMapGenerator
+    
+    }
+
+    package "Strategy.cs" #CBDDDE
+    {
+    
+        abstract Strategy
+
+        interface IStrategy
+        {
+            + void DoMove() : void;
+        }
+
+        interface ILearn
+        {
+            - Analize() : void;
+            - SaveStats() : void;
+        }
+
+        class NoStrategy
+        {
+            + void DoMove() : void;
+            - Analize() : void;
+            - SaveStats() : void;
+        }
+
+
+        class BeatRandomCell
+        {
+            + void DoMove() : void;
+            - Analize() : void;
+            - SaveStats() : void;
+        }
+    
+        IStrategy <|-- NoStrategy
+        ILearn <|-- NoStrategy
+        Strategy <|-- NoStrategy
+
+        IStrategy <|-- BeatRandomCell
+        ILearn <|-- BeatRandomCell
+        Strategy <|-- BeatRandmCell
+
+    }
+    
+    /'
+    Notes:
+    '/
+    
+    note top of MapGenerator.cs
+    Here may be more classes which extend 
+    (inherit) MapGenerator abstract class 
+    and implement IMapGenerator interface
+    end note
+    
+    note top of Strategy.cs
+    Here may be more classes which extend 
+    (inherit) Strategy abstract class 
+    and implement IStrategy and ILearn 
+    interfaces
+    end note
+    
+}
+    BattleShipPlayer <|-- MapGenerator
+    BattleShipPlayer <|-- Strategy
+    
+    IGame <|-- BattleShipGame
+    BattleShipGame *-- BattleShipPlayer
+
+@enduml

@@ -1,0 +1,115 @@
+@startuml
+
+title Application - Class Diagram
+
+
+hide members
+
+
+class Application
+{
+    + CreateGame()
+    + OpenGame()
+}
+
+Note right: One Application - a lot of forms
+
+class Form1
+{
+    
+}
+
+class Form
+{
+    - Game* game;
+    + Open()
+    + Restart()
+    + Save()
+    + Close()
+}
+
+Note left: One form - one game
+
+abstract Game
+{
+
+}
+
+package "BattleShip"
+{
+    package "BattleShipGame.cs" #EACCAA
+    {
+    
+        class BattleShipGame
+        {
+    
+        }
+    
+    }
+
+}
+
+package "Kangaroo"
+{
+    package "Kangaroo.cs" #DEEECE
+    {
+    
+        class Kangaroo
+        {
+    
+        }
+    }
+    
+}
+
+package "Matches"
+{
+    package "Matches.cs" #BEEDAC
+    {
+    
+        class Matches
+        {
+    
+        }
+        
+    }
+    
+}
+
+Application <--* Form1
+Application <|-- BattleShipGame
+Application <|-- Kangaroo
+Application <|-- Matches
+
+Form1 <|-- Form
+
+BattleShipGame ..> Form
+Kangaroo ..> Form
+Matches ..> Form
+
+Form <|- Game
+
+show Form methods
+show Form fields
+
+show Application methods
+show Application fields
+
+show Form1 methods
+show Form1 fields
+
+/'
+together
+{
+    BattleShipGame.cs
+    Kangaroo.cs
+    Matches.cs
+}
+'/
+
+Note as note1
+May be implemented
+any number of games
+end note
+
+@enduml
