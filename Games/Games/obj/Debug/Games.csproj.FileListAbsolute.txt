@@ -1,0 +1,16 @@
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.csprojAssemblyReference.cache
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.Properties.Resources.resources
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.csproj.GenerateResource.cache
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.csproj.CoreCompileInputs.cache
+C:\Users\VladG\source\repos\Games\Games\bin\Debug\Games.exe.config
+C:\Users\VladG\source\repos\Games\Games\bin\Debug\Games.exe
+C:\Users\VladG\source\repos\Games\Games\bin\Debug\Games.pdb
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.exe
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.pdb
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.Form1.resources
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.Form_Battleship.resources
+C:\Users\VladG\source\repos\Games\Games\bin\Debug\Interop.WMPLib.dll
+C:\Users\VladG\source\repos\Games\Games\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Interop.WMPLib.dll
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\VladG\source\repos\Games\Games\obj\Debug\Games.csproj.ResolveComReference.cache
