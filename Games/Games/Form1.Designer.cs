@@ -114,7 +114,8 @@
             this.Controls.Add(this.bt2);
             this.Controls.Add(this.bt1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = this.MinimumSize = new System.Drawing.Size(1100, 650);
+            this.MaximumSize = new System.Drawing.Size(1100, 650);
+            this.MinimumSize = new System.Drawing.Size(1100, 650);
             this.Name = "Form1";
             this.Text = "Puzzle Empire";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;

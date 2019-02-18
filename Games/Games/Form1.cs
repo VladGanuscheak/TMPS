@@ -14,6 +14,10 @@ namespace Games
 {
     public partial class Form1 : Form
     {
+        Form form = null;
+        Game game = null;
+        BattleShipGame battleship = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -26,18 +30,25 @@ namespace Games
 
         private void MyEventHandler(object sender, EventArgs e)
         {
-            Form form = null;
-            Game game = null;
 
             if (sender == bt1)
             {
-                form = new Form_Battleship();
+                game = BattleShipGame.getInstance();
+                if (game != battleship)
+                {
+                    battleship = (BattleShipGame)game;
+                    form = new Form_Battleship();
+                }
             }
             
             //
-            if (form != null)
+            if (!form.IsDisposed && form != null)
             {
                 form.Show();
+            }
+            else
+            {
+                battleship.setToNull();
             }
         }
     }
