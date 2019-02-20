@@ -22,13 +22,8 @@ namespace Games.BattleShip
         {
             player1 = player2 = null;
         }
-
-        private BattleShipGame(BattleShipPlayer _first, BattleShipPlayer _second)
-        {
-            if (_first != null) player1 = _first;
-            if (_second != null) player2 = _second;
-        }
         
+        // Singleton
         public static BattleShipGame getInstance()
         {
             if (instance == null)
@@ -43,6 +38,45 @@ namespace Games.BattleShip
                 }
             }
             return instance;
+        }
+        // Parametrezid Singleton
+        private BattleShipGame(BattleShipPlayer _first, BattleShipPlayer _second)
+        {
+            if (_first != null) player1 = _first;
+            if (_second != null) player2 = _second;
+        }
+
+        // Singleton + Builder
+        public static BattleShipGame getInstance(BattleShipPlayer _first, BattleShipPlayer _second)
+        {
+            if (instance == null)
+            {
+                lock (syncRoot) // Is used in order to not to be ambiguity 
+                                // during execution of different threads...
+                {
+                    if (instance == null)
+                    {
+                        player1 = _first;  // player1 is of type BattleShipPlayer abstract class
+                        player2 = _second; // player2 is of type BattleShipPlayer abstract class
+                        instance = new BattleShipGame();
+                    }
+                }
+            }
+            return instance;
+        }
+
+        // method of the Builder which sets the sample values for the Map class variables
+        void BuildMap()
+        {
+            if (player1 != null)
+            {
+                map1 = player1.CreateMap();
+            }
+
+            if (player2 != null)
+            {
+                map2 = player2.CreateMap();
+            }
         }
 
         public void setToNull()

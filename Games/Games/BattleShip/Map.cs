@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Games.BattleShip
 {
-    class Map
+    public class Map
     {
+        public Map()
+        {
+
+        }
     }
 }

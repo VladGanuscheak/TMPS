@@ -8,26 +8,31 @@ namespace Games.BattleShip
 {
     public interface IMapGenerator
     {
-        void GenerateMap();
+        Map GenerateMap();
     }
 
     public abstract class MapGenerator
     {
-
+        internal Map GenerateMap()
+        {
+            return null;
+        }
     }
 
     public class RandomMapGenerator : MapGenerator, IMapGenerator
     {
-        void IMapGenerator.GenerateMap()
+        Map IMapGenerator.GenerateMap()
         {
+            return new Map();
             throw new NotImplementedException();
         }
     }
 
     public class AdvancedMapGenerator : MapGenerator, IMapGenerator
     {
-        public void GenerateMap()
+        Map IMapGenerator.GenerateMap()
         {
+            return new Map();
             throw new NotImplementedException();
         }
     }
