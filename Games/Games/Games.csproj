@@ -91,6 +91,8 @@
       <DependentUpon>Form_Matches.cs</DependentUpon>
     </Compile>
     <Compile Include="IGame.cs" />
+    <Compile Include="Kangaroo\Kangaroo.cs" />
+    <Compile Include="Matches\Matches.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -122,10 +124,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Kangaroo\" />
-    <Folder Include="Matches\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\logo_Battleship.png" />
   </ItemGroup>

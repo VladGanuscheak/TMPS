@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //
 using Games.BattleShip;
+using Games.Kangaroo;
+using Games.Matches;
 
 namespace Games
 {
@@ -17,6 +19,8 @@ namespace Games
         Form form = null;
         Game game = null;
         BattleShipGame battleship = null;
+        KangarooGame kangaroo = null;
+        MatchesGame matches = null;
 
         public Form1()
         {
@@ -26,6 +30,11 @@ namespace Games
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private static void ShowForm(ref Form form, Game game)
+        {
+            
         }
 
         private void MyEventHandler(object sender, EventArgs e)
@@ -40,7 +49,25 @@ namespace Games
                     form = new Form_Battleship();
                 }
             }
-            
+            else if (sender == bt2)
+            {
+                game = KangarooGame.getInstance();
+                if (game != kangaroo)
+                {
+                    kangaroo = (KangarooGame)game;
+                    form = new Form_Kangaroo();
+                }
+            }
+            else if (sender == bt3)
+            {
+                game = MatchesGame.getInstance();
+                if (game != matches)
+                {
+                    matches = (MatchesGame)game;
+                    form = new Form_Matches();
+                }
+            }
+
             //
             if (!form.IsDisposed && form != null)
             {
@@ -48,8 +75,11 @@ namespace Games
             }
             else
             {
-                battleship.setToNull();
+                if (battleship != null) battleship.setToNull();
+                if (kangaroo != null) kangaroo.setToNull();
+                if (matches != null) matches.setToNull();
             }
+
         }
     }
 }
