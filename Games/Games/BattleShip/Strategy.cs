@@ -17,13 +17,18 @@ namespace Games.BattleShip
         void SaveStats();
     }
 
-    abstract class Strategy
+    public abstract class Strategy
     {
 
     }
 
-    class NoStrategy : Strategy, IStrategy, ILearn
+    public class NoStrategy : Strategy, IStrategy, ILearn
     {
+        public NoStrategy()
+        {
+
+        }
+
         public void Analize()
         {
             throw new NotImplementedException();
@@ -40,8 +45,13 @@ namespace Games.BattleShip
         }
     }
 
-    class BeatRandomCell : Strategy, IStrategy, ILearn
+    public class BeatRandomCell : Strategy, IStrategy, ILearn
     {
+        public BeatRandomCell()
+        {
+
+        }
+
         public void Analize()
         {
             throw new NotImplementedException();

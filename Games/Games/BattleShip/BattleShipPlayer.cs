@@ -19,7 +19,7 @@ namespace Games.BattleShip
             return null;
         }
     }
-
+    
     public class User : BattleShipPlayer
     {
         // Two abstract classes which are here in
@@ -32,16 +32,45 @@ namespace Games.BattleShip
             mg = _mg;
             st = _st;
         }
-
+        
         // Example of the Builder
         // скрытие было преднамеренным, поэтому установленно new
         public new Map CreateMap()
         {
             return mg.GenerateMap();
         }
+
+        /*coord<int> coord DoMove(Map map)
+        {
+            return (coord<int>)Strategy.DoMove(map);
+        }*/
+
+        public User(Behaviour abstractFactory)
+        {
+            mg = abstractFactory.CreateMapGenerator();
+            st = abstractFactory.CreateStrategy();
+        }
+    }
+    public abstract class Behaviour
+    {
+        public abstract MapGenerator CreateMapGenerator();
+        public abstract Strategy CreateStrategy();
     }
 
-    public class AI : BattleShipPlayer
+    public class UndefinedBehaviour : Behaviour // For User
+    {
+        public override MapGenerator CreateMapGenerator()
+        {
+            return new RandomMapGenerator();
+        }
+
+        public override Strategy CreateStrategy()
+        {
+            return new NoStrategy();
+        }
+    }
+
+    public class AI_Level1 : BattleShipPlayer
     {
 
     }

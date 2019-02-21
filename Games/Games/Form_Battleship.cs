@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Windows.Forms;
-//
 
-//using WMPLib;
 using System.Media;
 using System.IO;
 using System.Drawing;
+
+using Games.BattleShip;
 
 namespace Games
 {
     public partial class Form_Battleship : Form
     {
-        //private Size oldSize;
         SoundPlayer player;
+
+        BattleShipGame game;
+
         public Form_Battleship()
         {
             InitializeComponent();
@@ -75,6 +77,10 @@ namespace Games
                 {
                     item.Visible = false;
                 }
+                // Parametrized Singleton + Abstract Factory
+                // because the user is created with specific classes inside it which override
+                // different methods and are incapsulated in the abstract factory...
+                game = BattleShipGame.getInstance(new User(new UndefinedBehaviour()), new User(new UndefinedBehaviour()));
             }
             else if (sender == bt2)
             {
