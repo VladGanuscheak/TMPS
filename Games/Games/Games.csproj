@@ -65,6 +65,7 @@
     <Compile Include="BattleShip\BattleShipPlayer.cs" />
     <Compile Include="BattleShip\Map.cs" />
     <Compile Include="BattleShip\MapGenerator.cs" />
+    <Compile Include="BattleShip\Ship.cs" />
     <Compile Include="BattleShip\Strategy.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

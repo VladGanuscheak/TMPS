@@ -6,7 +6,7 @@ This picture shows only one class where the Singleton method has been implemente
 
 At this picture the _**game**_ variable is of type abstract class _Game_ and for it can be set the value of each object of class which inherits the corresponding abstract class.
 
-If the first button (bt1) is pressed, we will try to check if the current value of the _**game**_ variable isn't equal to battleship object. If the statement is true, the _battleship_ variable will own new value (the value of _game_) and another one form will be created. Otherwise, nothing will happend. It means that during the Form of the application (here it is Form1) is opened, we can only open **only** anothe one Form.
+If the first button (bt1) is pressed, we will try to check if the current value of the _**game**_ variable isn't equal to battleship object. If the statement is true, the _battleship_ variable will own new value (the value of _game_) and another one form will be created. Otherwise, nothing will happend. It means that during the Form of the application (here it is Form1) is opened, we can only open **only** another one Form for each class which inherits abstract class **Game**.
 
 ![Singleton_2](Singleton_2.png)
 
@@ -18,6 +18,6 @@ The interesting thing will happen, if I'll close the form of a game - the instan
 
 ![Singleton_4](Singleton_4.png)
 
-Here is another one example: from the Form1 I'm able to open many forms, but I can't open more than one form of the concrete game. So, in this picture have been opened four forms and I'm trying to open also another form which is equivalent to opened one. As the result the form additional form didn't open. It is all because I use singleton pattern to all custom classes which objects can be ment on Form1 designer. 
+Here is another one example: from the Form1 I'm able to open many forms, but I can't open more than one form of the concrete game. So, in this picture have been opened four forms and I'm trying to open also another form which is equivalent to opened one. As the result the additional form didn't open. It is all because I use singleton pattern to all custom classes which objects can be ment on Form1 designer. 
 
  [The refference of some inetialization details](https://metanit.com/sharp/patterns/2.3.php) may be founded at the METANIT.com site. I've choosed the classic form of the Singleton class initialization, but with check option of the multithreading, because, otherwise it could lead to an unexpected behaviour!
